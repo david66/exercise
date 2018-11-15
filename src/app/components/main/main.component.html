@@ -1,0 +1,69 @@
+<div class="exercise">
+  <!--SCORE-->
+  <div class="scores" *ngIf="!show">
+    <div class="score animated" [class.fadeInDown]="!show" [class.fadeOutUp]="show">
+      {{ score }}
+    </div>
+    <span class="animated" [class.fadeInDownBig]="!show" [class.fadeOutUpBig]="show">SCORE</span>
+  </div>
+  <!--CLOCK-->
+  <div class="clock animated" [class.fadeInLeft]="!show" [class.fadeOutLeft]="show" *ngIf="!show">
+    <div class="counter">
+      <p>{{ timeLeft }}</p>
+      <span class="animated" [class.fadeInLeftBig]="!show" [class.fadeOutLeftBig]="show">Seconds left...</span>
+    </div>
+    <div class="clock-counter">
+      <img src="assets/clock-counter.svg" class="">
+    </div>
+  </div>
+  <!--ITEMS-->
+  <div class="items animated fast" [class.fadeInLeft]="!show" [class.fadeOutRight]="show" *ngIf="!show && timeLeft != 60">
+    <div *ngFor="let box of boxes; let i = index" class="item" (click)="operation(box.type);playRandom();">
+      <img [src]="box.src" class="animated" [class.flash]="box.type == 'damaged'">
+    </div>
+  </div>
+  <!--BUTTON START-->
+  <div class="play" *ngIf="!show && timeLeft == 60">
+    <button class="btn btn-primary animated fadeInUp headShake" (click)='startPlay();startTimer()'>
+      <img src="assets/clock.svg" class="">Start game
+    </button>
+  </div>
+  <!--SCORES-->
+  <div *ngIf="show" class="congratulations animated fadeIn">
+    <div class="title animated fadeIn slow">SCORES</div>
+    <div class="congratulationsContainer" *ngFor="let score of scores | sortBy : 'score' | slice:0:5; let i = index;let first = first">
+      <div class="congratulationsInfo animated" [class.fadeInDown]="score.current && first" *ngIf="score.current && first">
+        <div class="coup animated bounce delay-1s">
+          <img src="assets/coup.svg" class="">
+        </div>
+      </div>
+      <div class="congratulationsText" *ngIf="score.current && first">
+        <span>CONGRATULATIONS!<br></span>
+        <p>You have set the higher score!</p>
+      </div>
+      <div class="congratulationsText" *ngIf="score.current && !first">
+        <p *ngIf="score.current && !first">Your score are between the first {{ i+1 }} results!</p>
+      </div>
+    </div>
+    <!--SCORES LIST-->
+    <div class="scores list">
+      <div class="score-item-list animated delay-1s" [class.top]="score.current" [class.bounceIn]="score.current"
+           *ngFor="let score of scores | sortBy : 'score' | slice:0:5; let i = index;let first = first;">
+        <div>
+          {{ score.score }}
+        </div>
+      </div>
+    </div>
+    <!--BUTTON PLAY AGAIN-->
+    <div class="play">
+      <button class="btn btn-primary animated headShake delay-3s" (click)='startPlay();startTimer()'>
+        <img src="assets/clock.svg" class="">Play Again
+      </button>
+    </div>
+  </div>
+</div>
+
+
+
+
+

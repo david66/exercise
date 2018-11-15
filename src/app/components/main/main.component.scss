@@ -1,0 +1,348 @@
+.exercise {
+  padding-top: 80px;
+
+  & .scores {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+
+    & .score {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 300px;
+      width: 300px;
+      background-color: #E88253;
+      color: white;
+      border-radius: 150px;
+      font-family: 'HelveticaNeueLTStd-BdCn';
+      font-size: 90px;
+      margin-bottom: 20px;
+    }
+
+    & span {
+      font-family: 'HelveticaNeueLTStd-Bd';
+      font-size: 20px;
+      position: absolute;
+      top: 260px;
+      color: white;
+    }
+
+    & .score-item-list {
+      display: flex;
+      justify-content: center;
+      height: 160px;
+      width: 160px;
+      line-height: 180px;
+      background-color: #FFC194;
+      color: #E88253;
+      border-radius: 80px;
+      font-family: 'HelveticaNeueLTStd-BdCn';
+      font-size: 72px;
+
+      &.top {
+        background-color: #E88253 !important;
+        color: white;
+      }
+    }
+  }
+
+  & .list {
+    width: 70%;
+    margin: auto;
+    margin-bottom: 50px;
+  }
+
+  & .congratulations {
+
+    & .title {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      justify-content: center;
+      color: #e88253;
+      font-family: 'HelveticaNeueLTStd-Bd';
+      font-size: 70px;
+      margin-bottom: 20px;
+    }
+
+    & .congratulationsContainer {
+      display: flex;
+      flex-direction: column;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+
+      & p {
+        color: #e88253;
+        font-family: 'HelveticaNeueLTStd-Md';
+        font-size: 22px;
+      }
+
+      & span {
+        font-family: 'HelveticaNeueLTStd-Bd';
+        font-size: 30px;
+        color: #e88253;
+      }
+
+      .congratulationsInfo {
+        height: 300px;
+        width: 300px;
+        background-color: #FFD7BA;
+        border-radius: 150px;
+        margin-bottom: 30px;
+      }
+
+      & .congratulationsText {
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      & .coup {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #e88253;
+        position: relative;
+        top: 70px
+      }
+    }
+  }
+
+  & .clock {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    width: 100%;
+    position: absolute;
+    top: 50px;
+    left: 25px;
+
+    & .counter {
+      height: 250px;
+      width: 250px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #FFD6B8;
+      margin: 20px;
+      border-radius: 125px;
+      font-family: 'HelveticaNeueLTStd-BdCn';
+      font-size: 80px;
+      color: #e88253;
+      border: 1px solid #FFCFAC;
+
+      & span {
+        font-family: 'HelveticaNeueLTStd-Bd';
+        font-size: 18px;
+        position: absolute;
+        top: 175px;
+        color: #e88253;
+      }
+    }
+
+    & .clock-counter {
+      width: 120px;
+      height: 120px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #ffe0c9;
+      color: #e88253;
+      border-radius: 60px;
+      border: 1px solid #FFCFAC;
+      position: relative;
+      right: 80px;
+    }
+  }
+
+  & .items {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 20px;
+
+    .item {
+      height: 250px;
+      width: 250px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #FFD6B8;
+      margin: 20px;
+      border-radius: 125px;
+      border: 1px solid #FFCFAC;
+
+      &:hover,
+      & img:hover {
+        cursor: pointer;
+        background-color: #FFCFAC;
+      }
+      &:active,
+      & img:active {
+        cursor: pointer;
+        background-color: #F2AA87;
+      }
+    }
+  }
+
+  & .btn img {
+    position: relative;
+    margin-right: 10px;
+    top: 5px;
+  }
+
+  & .btn-primary {
+    padding: 6px 25px 11px 25px;
+    border-radius: 25px;
+    border: solid 1px #e88253;
+    background-color: #e88253;
+    color: white;
+    font-family: 'HelveticaNeueLTStd-Bd';
+    font-size: 17px;
+
+    &:hover {
+      border: solid 1px #c97149;
+      background-color: #c97149;
+      cursor: pointer;
+    }
+  }
+
+  & .play {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+  }
+
+  & img {
+    max-width: 100%;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+
+  .exercise {
+    padding-top: 40px;
+
+    & .scores {
+
+      & .score {
+        height: 200px;
+        width: 200px;
+        font-size: 70px;
+        margin-bottom: 20px;
+        margin-top: 150px;
+      }
+
+      & span {
+        font-size: 14px;
+        top: 315px;
+      }
+
+      & .score-item-list {
+        height: 70px;
+        width: 70px;
+        line-height: 80px;
+        font-size: 32px;
+        border-radius: 35px;
+      }
+    }
+
+    & .congratulations {
+
+      & .title {
+        font-size: 40px;
+      }
+
+      & .congratulationsContainer {
+
+        & p {
+          font-size: 18px;
+        }
+
+        & .congratulationsInfo {
+          height: 240px;
+          width: 240px;
+          border-radius: 120px;
+        }
+
+        & .congratulationsText {
+          margin-bottom: 10px;
+        }
+
+        & .coup {
+          top: 55px;
+
+          & img {
+            width: 60%;
+          }
+        }
+      }
+
+    }
+
+    & .clock {
+      width: 100%;
+      position: absolute ;
+      top: 30px;
+      left: 15px;
+
+      & .counter {
+        height: 120px;
+        width: 120px;
+        margin: 10px;
+        border-radius: 60px;
+        font-size: 40px;
+
+        & span {
+          font-size: 12px;
+          top: 85px;
+        }
+      }
+
+      & .clock-counter {
+        width: 60px;
+        height: 60px;
+        display: flex;
+        border-radius: 30px;
+        right: 40px;
+
+        & img {
+          max-width: 40%;
+        }
+      }
+    }
+
+    & .items {
+      position: fixed;
+      bottom: 40px;
+
+      & .item {
+        height: 110px;
+        width: 110px;
+        margin: 5px;
+        border-radius: 55px;
+
+        & img {
+          width: 60%;
+        }
+      }
+    }
+
+    & .list {
+      width: 100%;
+    }
+
+    & .play {
+      position: fixed;
+      bottom: 30px;
+    }
+  }
+}
